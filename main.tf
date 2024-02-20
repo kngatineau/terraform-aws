@@ -8,7 +8,9 @@ terraform {
 }
 
 locals {
-  s3_bucket_name = "katie-s3-bucket"
+  s3_buckets = {
+    name = "katie-s3-bucket"
+  }
   terraform_state_key = "terraform/terraform-state"
 }
 
@@ -16,21 +18,8 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-data "aws_iam_policy_document" "s3-bucket-policiy-doc" {
-    version = "2012-10-17"
-  
-  statement {
-    effect    = "Allow"
-    actions   = [ "s3:ListBucket" ]
-    resources = [ "arn:aws:s3:::${local.s3_bucket_name}" ]
-  }
-
-  statement {
-    effect    = "Allow"
-    actions   = [
-      "s3:GetObject", 
-      "s3:PutObject"
-    ]
-    resources = [ "arn:aws:s3:::katie-s3-bucket/${local.terraform_state_key}" ]
-  }
+module "s3-buckets" {
+  for_each = local.s3_buckets
+  source = "./modules/s3_bucket"
+  name   =  each.value.name
 }
