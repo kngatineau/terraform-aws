@@ -34,6 +34,7 @@ resource "aws_key_pair" "ssh_key" {
 }
 
 resource "local_sensitive_file" "ssh_pem" {
+  count                = var.gen_pem_file ? 1 : 0
   filename             = pathexpand("~/.ssh/ssh.pem")
   file_permission      = "600"
   directory_permission = "700"
