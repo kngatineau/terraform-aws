@@ -15,3 +15,8 @@ variable "gen_pem_file" {
   default     = false
   description = "Generate a new PEM file for the EC2 key pair"
 }
+
+variable "allowed_ips" {
+  type        = list(string)
+  description = "List of allowed IPs to access the EC2 instance"
+}
