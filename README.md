@@ -49,3 +49,29 @@ No modules.
 | <a name="output_instance_arn"></a> [instance\_arn](#output\_instance\_arn) | n/a |
 | <a name="output_private_instance_ip"></a> [private\_instance\_ip](#output\_private\_instance\_ip) | n/a |
 | <a name="output_public_instance_ip"></a> [public\_instance\_ip](#output\_public\_instance\_ip) | n/a |
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+No requirements.
+
+## Providers
+
+No providers.
+
+## Modules
+
+No modules.
+
+## Resources
+
+No resources.
+
+## Inputs
+
+No inputs.
+
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
