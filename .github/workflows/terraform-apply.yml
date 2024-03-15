@@ -15,7 +15,7 @@ jobs:
   terraform:
     if: github.repository == 'kngatineau/terraform-aws'
     name: "Terraform Apply"
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
