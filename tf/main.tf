@@ -21,6 +21,15 @@ resource "aws_instance" "ec2_ubuntu_instance" {
     Name = "katies_free_tier_instance"
   }
 } 
+
+resource "aws_s3_bucket" "lambda_bucket" {
+  bucket = var.lambda_bucket_name
+
+  tags = {
+    Name = "katies_lambda_bucket"
+  }
+}
+
 # just because you *can* generate SSH keys in Terraform doesn't mean you should. 
 # this commented code technically worked but having the key in the state file isn't ideal.
 #
