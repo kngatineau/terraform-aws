@@ -10,6 +10,10 @@ output "private_instance_ip" {
   value = aws_instance.ec2_ubuntu_instance.private_ip
 }
 
+output "admin_iam_group_id" {
+  value = aws_iam_group.admin.id
+}
+
 # output "tf_state_bucket_arn" {
 #   value = aws_s3_bucket.tf_state_bucket.arn
 # }
