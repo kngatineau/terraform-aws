@@ -7,7 +7,7 @@ env:
   TF_CLOUD_ORGANIZATION: "kngatineau"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
   TF_WORKSPACE: "terraform-aws"
-  CONFIG_DIRECTORY: "./tf/"
+  CONFIG_DIRECTORY: .
 
 jobs:
   terraform:
