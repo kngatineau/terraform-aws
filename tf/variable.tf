@@ -4,6 +4,12 @@ variable "ubuntu_ami" {
   description = "Ubuntu AMI to install on EC2 instance"
 }
 
+variable "lambda_bucket_name" {
+  type        = string
+  default     = "katies-lambda-bucket"
+  description = "Name of the S3 bucket that holds Lambda functions"
+}
+
 # variable "key_name" {
 #   type        = string
 #   default     = "default"
